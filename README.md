@@ -28,7 +28,7 @@ How can machine learning models be used to detect fraudulent transactions in cre
 - While the model effectively catches most fraud, further tuning is needed to reduce false positives without missing fraudulent activities.
 
 #### Next Steps
-1. **Implement Advanced Models:** Use boosting algorithms like **XGBoost** or **LightGBM** to improve detection accuracy.
+1. **Implement Advanced Models:** Use boosting algorithms to improve detection accuracy.
 2. **Enhance Feature Engineering:** Add features like **spending pattern deviations** and **location consistency** for more nuanced fraud detection.
 3. **Real-Time Deployment:** Adjust classification thresholds and integrate the model into a **real-time monitoring system** to proactively prevent fraud.
 
