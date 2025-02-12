@@ -35,5 +35,15 @@ How can machine learning models be used to detect fraudulent transactions in cre
 #### Outline of Project
 - [Credit Card Fraud Detection Notebook](https://github.com/brianwells54/capstone/blob/main/credit_card_fraud_detection.ipynb)
 
+1. **Introduction:** Overview of credit card fraud and project goals.  
+2. **Data Loading and Exploration:** Importing libraries, loading the dataset, and initial data inspection.  
+3. **Data Cleaning:** Handling missing values and formatting issues.  
+4. **Exploratory Data Analysis (EDA):** Visualizing transaction distributions, time-based patterns, merchant analysis, and demographic insights.  
+5. **Feature Engineering:** Encoding categorical variables and creating new features like **transaction velocity** and **country mismatch**.  
+6. **Modeling:** Splitting the dataset, implementing logistic regression, and training the model.  
+7. **Model Evaluation:** Analyzing the confusion matrix, classification report, ROC-AUC score, and precision-recall metrics.  
+8. **Conclusions and Next Steps:** Summarizing findings and outlining recommendations for future improvements.  
+
+
 ##### Contact and Further Information
 *For inquiries or further details, contact Brian Wells at brian.wells@ndl.cc*
