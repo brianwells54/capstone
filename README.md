@@ -1,55 +1,39 @@
+### Project Title
+**Credit Card Fraud Detection Using Machine Learning**
 
-# [Credit Card Fraud Detection](credit_card_fraud_detection.ipynb)
-## Overview
-Credit card fraud leads to financial losses for banks and trust issues for customers whose accounts are compromised. Fraudsters exploit weaknesses in transaction systems, making unauthorized purchases that can go undetected, resulting in chargebacks and reimbursement costs for banks. For customers, fraud causes account freezes, disrupted transactions, and stress from resolving disputes. This model aims to proactively detect fraudulent transactions, minimizing financial risks for banks and reducing customer inconvenience. By accurately identifying fraud, the model helps maintain customer trust while balancing caution to avoid false alarms that could affect legitimate transactions.---
+**Author**  
+Brian Wells
 
-## Data Preparation
-- **Dataset**: `CreditCardData.csv`
-- **Target Variable**: `Fraud` (binary: 1 for "Fraud", 0 for "Legitimate")
-- **Features**:
-  - These are all the variables that the model will use to predict fraud (e.g., transaction amount, time of day, merchant group)
-  - A new feature called 'Time of Day' is being created based on the transaction time, categorizing transactions into Morning, Afternoon, Evening, or Night. This categorization is then used to encode to numerical values
-  - A feature called 'Country Mismatch' is created to flag transactions where the 'Country of Transaction' differs from the 'Country of Residence'.
-- **Preprocessing**:
-  - LabelEncoder is being used to convert categorical features into numerical values
+#### Executive Summary
+This project leverages machine learning to detect fraudulent credit card transactions, aiming to minimize financial losses for banks and protect customers from unauthorized activities. A logistic regression model was implemented to classify transactions as fraudulent or legitimate, balancing precision and recall to reduce false positives while catching most fraud cases.
 
----
+#### Rationale
+Credit card fraud results in significant financial losses for banks and can erode customer trust due to account freezes and transaction disruptions. Detecting fraud early helps prevent unauthorized charges, reduces operational costs, and enhances the customer experience by maintaining account security.
 
-## Methodology
- **Model Training and Evaluation**:
-   - Logistic Regression was chosen as the initial model.
-   - Models were trained on 70% of the data and evaluated on 30%.
-   - Confusion matrices were generated to visualize the performance for each model.
+#### Research Question
+How can machine learning models be used to detect fraudulent transactions in credit card operations at a financial institution, enabling proactive prevention of financial losses?
 
+#### Data Sources
+- **Public Dataset:** [Credit Card Fraud Transaction Data](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) from Kaggle, containing anonymized transaction records labeled as fraudulent or legitimate.
 
----
+#### Methodology
+1. **Data Preprocessing & Cleaning:** Handled missing values, removed inconsistencies, and encoded categorical features.
+2. **Feature Engineering:** Created features like **transaction velocity**, **time of day**, and **country mismatch** to improve model performance.
+3. **Modeling:** Implemented a **logistic regression** model with balanced class weights to handle data imbalance.
+4. **Evaluation:** Assessed model performance using **confusion matrix**, **precision**, **recall**, **F1-score**, and **ROC-AUC** metrics.
 
+#### Results
+- The model achieved a **recall of 0.93**, detecting 93% of fraudulent transactions, with a **precision of 0.53**, indicating some false positives.
+- The **ROC-AUC score of 0.9745** reflects strong overall performance in distinguishing fraud from legitimate transactions.
+- While the model effectively catches most fraud, further tuning is needed to reduce false positives without missing fraudulent activities.
 
+#### Next Steps
+1. **Implement Advanced Models:** Use boosting algorithms like **XGBoost** or **LightGBM** to improve detection accuracy.
+2. **Enhance Feature Engineering:** Add features like **spending pattern deviations** and **location consistency** for more nuanced fraud detection.
+3. **Real-Time Deployment:** Adjust classification thresholds and integrate the model into a **real-time monitoring system** to proactively prevent fraud.
 
-- **Logistic Regression**:
-  - Performed well overall with a balance between training and testing accuracy.
+#### Outline of Project
+- [Credit Card Fraud Detection Notebook](https://github.com/brianwells54/capstone/blob/main/credit_card_fraud_detection.ipynb)
 
----
-
-## Confusion Matrix Insights
-Confusion matrices revealed:
-- Confusion Matrix: The model correctly identified 26,032 legitimate transactions. This is a good represenations of non-fraud activity being correctly identified.
-- The model mistakenly flagged 1,804 legitimate transactions as fraud. This could lead to customer complaints, but may be better than the alternative.
-- The model missed 159 fraudulent transactions, predicting them as legitimate. This number is low, but could cost the bank money.
-- The model correctly identified 1,999 fraudulent transactions. These true positives represent an excellent result.
-
-
----
-
-## Recommendations
-   
-1. **Implement Advanced Models (Boosting Algorithms):**:
-   - Use algorithms like XGBoost or LightGBM to improve fraud detection accuracy. These models handle complex patterns better than logistic regression and can enhance precision without sacrificing recall..
-
-2. **Enhance Feature Engineering**:
-   - Introduce features like transaction velocity (number of transactions in a short period), location consistency (flagging transactions from unusual locations), and spending pattern deviations to improve the model’s ability to detect subtle fraud patterns.
-
-3. **Adjust Thresholds and Monitor in Real-Time**:
-   - Fine-tune the classification threshold to balance false positives and false negatives based on business priorities. Implement the model in a real-time fraud detection system and continuously monitor performance with live transaction data for ongoing optimization..
-
----
+##### Contact and Further Information
+*For inquiries or further details, contact Brian Wells at brian.wells@ndl.cc*
